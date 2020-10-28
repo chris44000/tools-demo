@@ -1,0 +1,15 @@
+<template>
+    <lightning-card  title="Hello">
+         
+        <div class="slds-p-horizontal_small">Card Body (custom component)</div>
+        <template if:true={contacts.data}>   
+        <template for:each={contacts.data} for:item="contact">
+                <p key={contact.Id}>{contact.FirstName}</p>
+            </template>
+            <template if:true={contacts.error}>
+                HANDLE ERROR
+            </template>
+        </template> 
+        <p slot="footer">Card Footer</p>
+    </lightning-card>
+</template>
